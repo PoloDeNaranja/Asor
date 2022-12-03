@@ -2,13 +2,12 @@
 #include <signal.h>
 #include <stdlib.h>
 #include <unistd.h>
+
 int N_SIGINT=0;
 int N_SIGTSTP=0;
 
 void handler(int signal){
 	
-
-  //printf("\nInside handler function\n");
 	if(signal == SIGINT){
 		N_SIGINT++;
 	}
@@ -27,8 +26,7 @@ int main(int argc, char * argv[]){
 
 	
 	while(N_SIGINT+N_SIGTSTP <10){
-	//sleep(1);
-	//printf("\nInside normal function\n");
+		printf("\na\n");
 	}
 	printf("SIGINT= %i\nSIGTSTP= %i",N_SIGINT,N_SIGTSTP);
 
